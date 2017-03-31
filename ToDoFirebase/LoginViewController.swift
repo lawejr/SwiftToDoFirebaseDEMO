@@ -11,6 +11,7 @@ import Firebase
 
 class LoginViewController: UIViewController {
   
+  var ref: FIRDatabaseReference!
   let segueId = "tasksSegue"
   
   
@@ -50,12 +51,11 @@ class LoginViewController: UIViewController {
     
     FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { [weak self] (user, error) in
       
-      if error == nil {
-        guard user != nil else { print("User is not created"); return }
+        guard error == nil, user != nil else { print("User is not created"); return }
+        let userRef = self?.ref.child((user?.uid)!)
+      
+        userRef?.setValue(["email": user?.email])
         // Переход на следующий viewController происходит по observer во viewDidLoad
-      } else {
-        self?.displayWarning(withText: "Email or password is incorrect")
-      }
     })
   }
   
@@ -70,6 +70,8 @@ class LoginViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    ref = FIRDatabase.database().reference(withPath: "users")
     
     NotificationCenter.default.addObserver(self, selector: #selector(kbDidShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(kbDidHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
