@@ -18,7 +18,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIScrollView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -77,7 +77,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m0Z-EU-Wl4"/>
-                                                    <segue destination="mZQ-uP-TNL" kind="show" identifier="tasksSegue" id="f1S-yt-AGr"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qla-ji-2VK">
@@ -119,6 +118,7 @@
                         <outlet property="emailTextField" destination="PVx-D5-oJE" id="JkG-Tj-YDJ"/>
                         <outlet property="passwordTextField" destination="87K-c1-ZCC" id="NTH-ot-sLo"/>
                         <outlet property="warnLabel" destination="fV4-JP-MJi" id="n5B-iJ-gZc"/>
+                        <segue destination="mZQ-uP-TNL" kind="show" identifier="tasksSegue" id="qlO-a9-dXS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -168,6 +168,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tasks" id="X3x-m6-Iyy">
+                        <barButtonItem key="leftBarButtonItem" title="Sing out" id="qpX-ru-X8I">
+                            <connections>
+                                <action selector="singOutTapped:" destination="Ppp-kg-EmE" id="mW3-bI-qtu"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="HoO-hc-QF1">
                             <connections>
                                 <action selector="addTapped:" destination="Ppp-kg-EmE" id="gEX-yO-8Hd"/>

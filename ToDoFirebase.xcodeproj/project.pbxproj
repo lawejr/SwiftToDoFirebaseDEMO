@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		2B79FD7572D06FF64C153896 /* Pods_ToDoFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 481A7593AF12DDF09952D0F6 /* Pods_ToDoFirebase.framework */; };
 		F21D00021E8E3FB500B69378 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F21D00011E8E3FB500B69378 /* GoogleService-Info.plist */; };
-		F21DFFFE1E8E360C00B69378 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21DFFFD1E8E360C00B69378 /* UIColorExtensions.swift */; };
+		F24773A71E8E9F6300BFE4DB /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24773A51E8E9F6300BFE4DB /* UIColorExtensions.swift */; };
+		F24773A81E8E9F6300BFE4DB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24773A61E8E9F6300BFE4DB /* User.swift */; };
+		F24773AA1E8E9FF600BFE4DB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24773A91E8E9FF600BFE4DB /* Task.swift */; };
 		F25D221B1E8D6E96007D56A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D221A1E8D6E96007D56A6 /* AppDelegate.swift */; };
 		F25D221D1E8D6E96007D56A6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25D221C1E8D6E96007D56A6 /* LoginViewController.swift */; };
 		F25D22201E8D6E96007D56A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F25D221E1E8D6E96007D56A6 /* Main.storyboard */; };
@@ -23,7 +25,9 @@
 		481A7593AF12DDF09952D0F6 /* Pods_ToDoFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80114F0E4079F76C0AFAFC98 /* Pods-ToDoFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoFirebase.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoFirebase/Pods-ToDoFirebase.release.xcconfig"; sourceTree = "<group>"; };
 		F21D00011E8E3FB500B69378 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		F21DFFFD1E8E360C00B69378 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtensions.swift; path = ../UIColorExtensions.swift; sourceTree = "<group>"; };
+		F24773A51E8E9F6300BFE4DB /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = SOURCE_ROOT; };
+		F24773A61E8E9F6300BFE4DB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = SOURCE_ROOT; };
+		F24773A91E8E9FF600BFE4DB /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = SOURCE_ROOT; };
 		F25D22171E8D6E96007D56A6 /* ToDoFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F25D221A1E8D6E96007D56A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F25D221C1E8D6E96007D56A6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +67,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F247739B1E8E900A00BFE4DB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F24773A61E8E9F6300BFE4DB /* User.swift */,
+				F24773A91E8E9FF600BFE4DB /* Task.swift */,
+			);
+			name = Models;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		F247739E1E8E907400BFE4DB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F25D221E1E8D6E96007D56A6 /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		F25D220E1E8D6E96007D56A6 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +106,8 @@
 		F25D22191E8D6E96007D56A6 /* ToDoFirebase */ = {
 			isa = PBXGroup;
 			children = (
+				F247739B1E8E900A00BFE4DB /* Models */,
+				F247739E1E8E907400BFE4DB /* Views */,
 				F25D222F1E8E27D9007D56A6 /* Controllers */,
 				F25D222E1E8E27C1007D56A6 /* Supporting files */,
 			);
@@ -93,12 +117,11 @@
 		F25D222E1E8E27C1007D56A6 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
-				F25D221E1E8D6E96007D56A6 /* Main.storyboard */,
 				F25D221A1E8D6E96007D56A6 /* AppDelegate.swift */,
+				F24773A51E8E9F6300BFE4DB /* UIColorExtensions.swift */,
 				F25D22211E8D6E96007D56A6 /* Assets.xcassets */,
 				F25D22231E8D6E96007D56A6 /* LaunchScreen.storyboard */,
 				F25D22261E8D6E96007D56A6 /* Info.plist */,
-				F21DFFFD1E8E360C00B69378 /* UIColorExtensions.swift */,
 				F21D00011E8E3FB500B69378 /* GoogleService-Info.plist */,
 			);
 			name = "Supporting files";
@@ -240,8 +263,10 @@
 			files = (
 				F25D221D1E8D6E96007D56A6 /* LoginViewController.swift in Sources */,
 				F25D221B1E8D6E96007D56A6 /* AppDelegate.swift in Sources */,
+				F24773A81E8E9F6300BFE4DB /* User.swift in Sources */,
 				F25D222D1E8E276D007D56A6 /* TasksViewController.swift in Sources */,
-				F21DFFFE1E8E360C00B69378 /* UIColorExtensions.swift in Sources */,
+				F24773AA1E8E9FF600BFE4DB /* Task.swift in Sources */,
+				F24773A71E8E9F6300BFE4DB /* UIColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
